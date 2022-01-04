@@ -1,0 +1,479 @@
+html, body {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+#registerScreen, #loggedIn {
+    display: none;
+}
+
+html, body, .loginScreen, #todayM, #previousM, #nextM, .modal-content, .modal-header, .modal-body, .modal-footer, .addProperty, input[type="text"].itemTitle, input#addItemDate, .username input[type="text"], .password input[type="password"], #login {
+    background-color: #FCF1E8;
+}
+
+.sidebar, .item, .signSection {
+    background-color: #e29578;
+}
+
+#monthYear, .weekday, .dayNum, #todayM, #previousM, #nextM, .addProperty, .modal-content, .modal-header, .modal-body, .modal-footer, input[type="text"].itemTitle, input#addItemDate, .close, .itemDate, .username input[type="text"], .password input[type="password"], #login {
+    color:#e29578;
+}
+
+.itemLType, .itemR, .itemSDate, #days > div, #itemSLabel, .signSection{
+    color: #edf6f9;
+}
+
+#addItem {
+    background-color: #DF8968;
+}
+
+.close:hover,
+.close:focus {
+    color: #DF8968;
+}
+
+#add, input#addItemDate:hover {
+    background-color: #e29578;
+    color: #edf6f9;
+}
+
+.dateLabel {
+    color: #F1B9A5;
+}
+
+#loginScreen {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 50% 50%;
+}
+
+.title {
+    grid-column: 1;
+    text-align: center;
+    margin-top: 30%;
+    font-size: 30px;
+}
+
+.loginColumn {
+    grid-column: 2;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.signSection {
+    height: 60%;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.sign {
+    display: inline-flex;
+    font-size: 30px;
+}
+
+.signIn, .signUp {
+    margin: 35px 25px;
+    padding-bottom: 2px;
+}
+
+.active {
+    border-bottom: 3px solid #FCF1E8;
+}
+
+.loginScreen {
+    margin: 7% 0;
+    vertical-align: middle;
+}
+
+.username > label, .password > label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.username input[type="text"], .password input[type="password"]{
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+}
+
+.username input[type="text"]:focus, .password input[type="password"]:focus{
+    outline: none;
+}
+
+.username, .password {
+    margin: 12px 0;
+}
+
+#login {
+    margin-top: 6px;
+    font-size: 16px;
+    padding: 12px 30px;
+}
+
+.signInSection {
+    display: none;
+}
+
+.container { 
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 6% 94%;
+    /* grid-gap: 10px; */
+}
+
+
+.navigation {
+    /* background-color:red; */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    /* border-bottom: 1px solid #D4D6D5; */
+    /* margin: 0 auto; */
+}
+
+.calendar {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30px auto;
+}
+
+#monthYear {
+    display: inline;
+    font-size:36px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: auto 20px;
+}
+
+.monthButtons {
+    margin: 0 20px 0 auto;
+    vertical-align: middle;
+    display: flex;
+}
+
+#todayM {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: auto 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#previousM, #nextM {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 0;
+    /* margin: auto 0; */
+    cursor: pointer;
+}
+
+#week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 4px;
+    margin: 4px 10px 0 10px;
+}
+
+.weekday {
+    font-size:20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 14px;
+    margin: 0 10px 10px 10px;
+}
+
+.currDay {
+    /* background-color: #B79785; */
+    /* color: #EEE9E3; */
+    /* border-radius: 50%; */
+    border-top: 4px solid #b39a84 !important;
+}
+
+#days > div{
+    /* text-align: center; */
+    /* background-color:rgb(222 216 209 / 80%); */
+    border-top: 4px solid rgb(222 216 209 / 80%);
+}
+
+.dayNum {
+    width: 20px;
+    height: 20px;
+    /* padding: 2px; */
+    margin: 4px 8px;
+} 
+
+.item {
+    display: flex;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 6px;
+    margin-bottom: 2px;
+    /* width: 100px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemL {
+    /* width: 100%; */
+    display: flex;
+    text-align: left;
+    margin: 0 auto 0 0;
+    /* text-transform: uppercase; */
+}
+
+.itemLClass {
+    margin: 0 4px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemLType {
+    /* color: #e2dcd4; */
+}
+
+.itemR {
+    display: inline-block;
+    text-align: right;
+    margin: 0 0 0 auto;
+}
+
+.sidebar {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    position: relative;
+}
+
+#today {
+    padding: 50px 0;
+    margin: 0 24px;
+    border-bottom: 4px solid #EEE9E3;
+}
+
+.sidebarTodayW {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.sidebarTodayD {
+    height: 110px;
+    font-size: 100px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.sideTitle, .subtitle {
+    text-transform: uppercase;
+    /* text-align: center; */
+    font-size: 24px;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+.sideTitle {
+    margin-top: 20px;
+    /* margin-left: 24px; */
+    margin-left: 10px;
+}
+
+.subtitle {
+    /* font-size:26px;
+    text-align: center; */
+}
+
+.itemSContainer {
+    /* display: flex; */
+    align-items: center;
+    padding: 4px 2px;
+    text-align: left;
+    font-size: 12px;
+    /* margin-left: -24px; */
+}
+
+.itemSRow {
+    display: flex;
+    align-items: center;
+}
+
+#itemSCheck {
+    margin: 4px 5px 4px 4px;
+}
+
+#itemSLabel {
+    text-transform: none !important;
+    font-size: 14px;
+    letter-spacing: 1px;
+    /* background-color: rgba(171,143,118,1); */
+}
+
+.itemSDate {
+    font-size: 14px;
+    margin: 0 10px 0 auto;
+}
+
+#addItem {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    /* height: 6%; */
+    bottom: 0;
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Modal --------------------------------------------------------- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    padding-top: 100px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+  /* Modal Header */
+.modal-header {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+  
+  /* Modal Body */
+.modal-body {
+    padding: 40px;
+}
+  
+  /* Modal Footer */
+.modal-footer {
+    display: flex;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    /* border: 1px solid #888; */
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 10px;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 30px; opacity: 1}
+}
+
+/* The Close Button */
+.close {
+    display: flex;
+    margin: 0 10px 0 auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="text"].itemTitle {
+    display: block;
+    width: calc(100% - 8px);
+    padding: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: 'Montserrat';
+    border: 0;
+    border-bottom: 2px solid #b39a84;
+}
+
+.itemDate {
+    display: flex;
+}
+
+.dateLabel {
+    display: flex;
+    margin: 0 60px 0 4px;
+    padding: 4px;
+    font-size: 16px;
+}
+
+input#addItemDate {
+    display: flex;
+    width: 100%;
+    margin: 0 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    border: 0;
+}
+
+input.itemTitle:focus, input#addItemDate:focus {
+    outline: none;
+}
+
+input#addItemDate:hover {
+    /* background-color: #EEE9E3;
+    color: #b39a84; */
+}
+
+.itemTime, .itemEndDate {
+    display: block;
+    padding: 4px 20px;
+}
+
+.itemTime label, .itemEndDate label {
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    border: 0;
+    font-family: 'Montserrat';
+}
+
+#add {
+    margin: 0 0 0 auto;
+}
