@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Course Planner</title>
+    <link rel='stylesheet' href='styles.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body>
+    <!-- <form action="/action_page.php" method="post"> -->
+    <div id='loginScreen'>
+        <div class="title">
+            <h1>Course<br>Planner</h1>
+        </div>
+        <div class="loginColumn">
+            <div class="signSection">
+                <div class="sign">
+                    <div class="signIn active">Sign In</div>
+                    <div class="signUp">Sign Up</div>
+                </div>
+                <div id="signInSection">
+                	<div id="invalidLogin">Incorrect username or password.</div>
+                    <div class="username">
+                        <label>Username</label>
+                        <input id="username" type="text" name="username" required>
+                        <div id="requiredUser">This field is required.</div>
+                    </div>
+                    <div class="password">
+                        <label>Password</label>
+                        <input id="password" type="password" name="password" required>
+                        <div id="requiredPass">This field is required.</div>
+                    </div>
+                    <button id="login">Sign in</button>
+                </div>
+                <div id="signUpSection">
+                    <div id="invalidSignUp">Username already existed.</div>
+                    <div id="invalidPass">Password does not match.</div>
+                    <div class="username">
+                        <label>Username</label>
+                        <input id="signUpUser" type="text" name="regUsername" required>
+                        <div id="requiredsignUpUser">This field is required.</div>
+                    </div>
+                    <div class="password">
+                        <label>Password</label> 
+                        <input id="signUpPass" type="password" name="regPassword" required>
+                        <div id="requiredsignUpPass">This field is required.</div>
+                    </div>
+                    <div class="password">
+                        <label>Confirm Password</label>
+                        <input id="signUpConPass" type="password" name="confirmPassword" required>
+                        <div id="requiredsignUpConPass">This field is required.</div>
+                    </div>
+                    <button id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loggedIn">
+    <div class='container'>
+        <div class='navigation'>
+            <div id='monthYear'></div>
+            <div class="monthButtons">
+                <button id="todayM" type="button">Today</button>
+                <button id="previousM" type="button">&#11207;</button>
+                <button id="nextM" type="button">&#11208;</button>
+            </div>
+            
+        </div>
+        <div class='calendar'>
+            <div id='week'></div>
+            <div id='days'></div>
+        </div>
+        <div class='sidebar'>
+            <div id="today"></div>
+            <div id='sideTitle' class='sideTitle'></div>
+            <div id='addItem'>Add New Item</div>
+        </div>
+    </div><!--  end of container -->
+    <div id="addItemModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input class="itemTitle" type="text" name="title" placeholder="Title" required>
+                <div id="itemProps">
+                    <label class="dateLabel" for="date">Date</label>
+                    <input id="addItemDate" type="text" name="date" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="add">Add</button>
+            </div>
+          </div>
+    </div><!--  end of itemModal -->
+    </div><!--  end of loggedIn -->
+    <!-- </form> -->
+</body>
+<script src="scripts.js"></script>
+</html>
